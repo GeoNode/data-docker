@@ -84,7 +84,7 @@ And the with the option `--volumes-from` you can mount the created volume `/geon
 
 .. code-block:: console
 
-    $ docker run -d --volumes-from geonode-data-container --name geoserver geonode/geonode-data
+    $ docker run -d --volumes-from geonode-data-container --name geoserver geonode/geoserver
 
 .. hint:: Notice that if you remove containers that mount volumes, the volume store and its data will not be deleted since docker preserves that.
 
@@ -96,6 +96,81 @@ To completely delete a volume from the file system you have to run:
 
 How to start with docker-compose for geonode data volume container
 ==================================================================
+
+Start the creation of a volume with the **GEOSERVER_DATA_DIR** in the directory `/geoserver_data/data`:
+
+.. code-block:: console
+
+    $ docker-compose up
+
+Run a geoserver container with such created volume:
+
+.. code-block:: console
+
+	# need to having pulling geonode/geoserver from docker hub
+    $ docker run -d --volumes-from geoserver_data_dir --name geoserver geonode/geoserver
+
+Verify that the preloaded `GeoServer Data Directory`_ build from Jenkins is actually there:
+
+.. _GeoServer Data Directory: http://build.geonode.org/geoserver/latest/data-2.9.x.zip
+
+.. code-block:: console
+
+    $ docker exec -it geoserver ls -lart /geoserver_data/data/
+
+The output should be something similar:
+
+.. code-block:: console
+
+	total 76
+	drwxr-xr-x  3 root root 4096 Aug 27 16:51 workspaces
+	-rw-r--r--  1 root root 1547 Aug 27 16:51 wms.xml
+	-rw-r--r--  1 root root 2013 Aug 27 16:51 wfs.xml
+	-rw-r--r--  1 root root 1285 Aug 27 16:51 wcs.xml
+	drwxr-xr-x  2 root root 4096 Aug 27 16:51 styles
+	drwxr-xr-x  8 root root 4096 Aug 27 16:51 security
+	drwxr-xr-x  2 root root 4096 Aug 27 16:51 printing
+	drwxr-xr-x  2 root root 4096 Aug 27 16:51 plugIns
+	drwxr-xr-x  2 root root 4096 Aug 27 16:51 palettes
+	drwxr-xr-x  2 root root 4096 Aug 27 16:51 logs
+	-rw-r--r--  1 root root  144 Aug 27 16:51 logging.xml
+	drwxr-xr-x  2 root root 4096 Aug 27 16:51 images
+	-rw-r--r--  1 root root 1111 Aug 27 16:51 gwc-gs.xml
+	-rw-r--r--  1 root root 1374 Aug 27 16:51 global.xml
+	drwxr-xr-x  2 root root 4096 Aug 27 16:51 geonode
+	drwxr-xr-x  2 root root 4096 Aug 27 16:51 demo
+	-rw-r--r--  1 root root  184 Aug 27 16:51 README.rst
+	drwxr-xr-x 12 root root 4096 Aug 27 16:51 .
+	drwxr-xr-x  7 root root 4096 Aug 27 17:08 ..
+
+How to define a docker-compose that uses docker-data
+----------------------------------------------------
+
+A docker-compose.yml can be defined in such a way with a service that mounts this data directory:
+
+.. code-block:: yaml
+
+	version: '2'
+
+	services:
+	  geoserver:
+	    build: .
+	    ports:
+	       - "8888:8080"
+	    volumes_from:
+	       # reference to the service which has the volume with the preloaded geoserver_data_dir
+	       - data_dir_conf
+	  data_dir_conf:
+	    build: .
+	    image: geoserverdatadir
+	    container_name: geoserver_data_dir
+	    command: /bin/true
+	    volumes:
+	      - /geoserver_data/data 
+
+	volumes:
+	  # reference to the named data container that holds the preloaded geoserver data directory 
+	  geoserver_data_dir:
 
 
 
