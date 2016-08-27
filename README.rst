@@ -13,7 +13,7 @@ Quick introduction on creating persisted storage in Docker
 Data persistence strategies
 ---------------------------
 
-The most commonly used approches in `Docker`_ are :ref:`data volumes` and :ref:`data volume containers` which essentially create a file system data volume rather than a dedicated data volume container.  
+The most commonly used approches in `Docker`_ are `Data volumes`_ and `Data volume containers`_ which essentially create a file system data volume rather than a dedicated data volume container.  
 
 .. _Docker: https://www.docker.com/technologies/overview 
 
