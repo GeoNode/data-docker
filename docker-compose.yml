@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  # geoserver:
+  #   build: .
+  #   ports:
+  #     - "8888:8080"
+  #   volumes_from:
+  #     # reference to the service which has the volume with the preloaded geoserver_data_dir
+  #     - data_dir_conf
+  data_dir_conf:
+    build: .
+    image: geoserverdatadir
+    container_name: geoserver_data_dir
+    command: /bin/true
+    volumes:
+      - /geoserver_data/data 
+
+volumes:
+  # reference to the named data container that holds the preloaded geoserver data directory 
+  geoserver_data_dir:
