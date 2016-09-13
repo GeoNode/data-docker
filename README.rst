@@ -1,11 +1,11 @@
 *****************************
-How to start with docker-data
+How to start with data-docker
 *****************************
 
 What you can do with this docker container
 ==========================================
 
-The **docker-data** project can be your base data container volume to add data from scratch to GeoServer and PostGIS and then make them persisted when you want to stop your current containers.
+The **data-docker** project can be your base data container volume to add data from scratch to GeoServer and PostGIS and then make them persisted when you want to stop your current containers.
 
 Quick introduction on creating persisted storage in Docker
 ==========================================================
@@ -143,7 +143,7 @@ The output should be something similar:
 	drwxr-xr-x 12 root root 4096 Aug 27 16:51 .
 	drwxr-xr-x  7 root root 4096 Aug 27 17:08 ..
 
-How to define a docker-compose that uses docker-data
+How to define a docker-compose that uses data-docker
 ----------------------------------------------------
 
 A docker-compose.yml can be defined in such a way with a service that mounts this data directory:
