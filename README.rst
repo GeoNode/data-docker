@@ -13,7 +13,7 @@ Quick introduction on creating persisted storage in Docker
 Data persistence strategies
 ---------------------------
 
-The most commonly used approches in `Docker`_ are `Data volumes`_ and `Data volume containers`_ which essentially create a file system data volume rather than a dedicated data volume container.  
+The most commonly used approches in `Docker`_ are `Data volumes`_ and `Data volume containers`_ which essentially create a file system data volume rather than a dedicated data volume container.
 
 .. _Docker: https://www.docker.com/technologies/overview
 
@@ -62,7 +62,7 @@ Host data volumes
 ^^^^^^^^^^^^^^^^^
 
 You can also mount a directory from your Docker daemon’s host into a container and this could be very useful for testing but even for production in case your host machine can share a storage mount point like a network file system (*NFS*). This approach despite its ease to implement nature has actually an heavy constraint that you have to pre-configure the mount point in your docker host.
-This breaks two of the biggest Docker advantages: **container portability** and **applications run anywhere**. 
+This breaks two of the biggest Docker advantages: **container portability** and **applications run anywhere**.
 
 .. code-block:: console
 
@@ -114,12 +114,12 @@ Run a geoserver container with such created volume:
 
 .. code-block:: console
 
-	# need to having pulling geonode/geoserver:2.9.x from docker hub
+	# need to having pulling geonode/geoserver:2.10.x from docker hub
     $ docker run -d --volumes-from geoserver_data_dir --name geoserver geonode/geoserver
 
-Verify that the preloaded `GeoServer Data Directory for GeoServer 2.9.x`_ build from Jenkins is actually there:
+Verify that the preloaded `GeoServer Data Directory for GeoServer 2.10.x`_ build from Jenkins is actually there:
 
-.. _GeoServer Data Directory for GeoServer 2.9.x: http://build.geonode.org/geoserver/latest/data-2.9.x.zip
+.. _GeoServer Data Directory for GeoServer 2.10.x: http://build.geonode.org/geoserver/latest/data-2.10.x.zip
 
 .. code-block:: console
 
@@ -153,36 +153,36 @@ The output should be something similar:
 How to define a docker-compose that uses data-docker
 ----------------------------------------------------
 
-A docker-compose.yml can be defined in such a way with a service that mounts this data directory from a `tag of Docker Hub builds`_, in this case the version for `GeoServer-GeoNode 2.9.x`_:
+A docker-compose.yml can be defined in such a way with a service that mounts this data directory from a `tag of Docker Hub builds`_, in this case the version for `GeoServer-GeoNode 2.10.x`_:
 
-.. _tag of Docker Hub builds: https://hub.docker.com/r/geonode/geoserver_data/builds/ 
+.. _tag of Docker Hub builds: https://hub.docker.com/r/geonode/geoserver_data/builds/
 
-.. _GeoServer-GeoNode 2.9.x: https://github.com/GeoNode/geoserver-geonode-ext/tree/2.9.x
+.. _GeoServer-GeoNode 2.10.x: https://github.com/GeoNode/geoserver-geonode-ext/tree/2.10.x
 
 .. code-block:: yaml
 
-	version: '2'
+    version: '2'
 
-	services:
-	  geoserver:
-	    build: .
-	    ports:
-	       - "8888:8080"
-	    volumes_from:
-	       # reference to the service which has the volume with the preloaded geoserver_data_dir
-	       - data_dir_conf
-	  data_dir_conf:
-	    image: geonode/geoserver_data:2.9.x
-	    container_name: geoserver_data_dir # named data container
-	    command: /bin/true
-	    volumes:
-	      - /geoserver_data/data 
+    services:
+        geoserver:
+            build: .
+            ports:
+                - "8888:8080"
+            volumes_from:
+                # reference to the service which has the volume with the preloaded geoserver_data_dir
+                - data_dir_conf
+        data_dir_conf:
+            image: geonode/geoserver_data:2.10.x
+            container_name: geoserver_data_dir # named data container
+            command: /bin/true
+            volumes:
+                - /geoserver_data/data
 
-	volumes:
-	  # reference to the named data container that holds the preloaded geoserver data directory 
-	  geoserver_data_dir:
+    volumes:
+        # reference to the named data container that holds the preloaded geoserver data directory
+        geoserver_data_dir:
 
-If you want to use the new GeoServer version *2.9.x* with the *oauth2* authentication mechanism then you should modify this line in your docker-compose.yaml file:
+If you want to use the stable GeoNode with GeoServer version *2.9.x* with the *oauth2* authentication mechanism then you should modify this line in your docker-compose.yaml file:
 
 .. code-block:: yaml
 
@@ -198,6 +198,8 @@ There are two different tags from the `Docker Hub builds`_:
 
 * **2.9.x**: `geonode/geoserver_data:2.9.x`_
 * **2.9.x-oauth2**: `geonode/geoserver_data:2.9.x-oauth2`_
+* **2.10.x**: `geonode/geoserver_data:2.10.x`_
 
 .. _geonode/geoserver_data:2.9.x: https://hub.docker.com/r/geonode/geoserver_data/builds/
 .. _geonode/geoserver_data:2.9.x-oauth2: https://hub.docker.com/r/geonode/geoserver_data/builds/
+.. _geonode/geoserver_data:2.10.x: https://hub.docker.com/r/geonode/geoserver_data/builds/

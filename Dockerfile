@@ -2,14 +2,14 @@ FROM alpine:latest
 MAINTAINER GeoNode development team
 
 # Install curl in alpine 3.3+
-RUN apk --no-cache add curl 
+RUN apk --no-cache add curl
 
 # Download required files
 RUN mkdir -p /tmp/geonode/downloaded
 ENV TEMP_DOWNLOADED /tmp/geonode/downloaded
 WORKDIR ${TEMP_DOWNLOADED}
 
-ENV GEOSERVER_VERSION=2.9.x-oauth2
+ENV GEOSERVER_VERSION=2.10.x
 
 ADD download.sh ${TEMP_DOWNLOADED}
 RUN chmod +x ${TEMP_DOWNLOADED}/download.sh
