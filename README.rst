@@ -200,6 +200,6 @@ There are two different tags from the `Docker Hub builds`_:
 * **2.9.x-oauth2**: `geonode/geoserver_data:2.9.x-oauth2`_
 * **2.10.x**: `geonode/geoserver_data:2.10.x`_
 
-.. _geonode/geoserver_data:2.9.x: https://hub.docker.com/r/geonode/geoserver_data/builds/
-.. _geonode/geoserver_data:2.9.x-oauth2: https://hub.docker.com/r/geonode/geoserver_data/builds/
-.. _geonode/geoserver_data:2.10.x: https://hub.docker.com/r/geonode/geoserver_data/builds/
+.. _geonode/geoserver_data:2.9.x: https://hub.docker.com/r/geonode/geoserver_data/builds/bsus6alnddg4bc7icwymevp/
+.. _geonode/geoserver_data:2.9.x-oauth2: https://hub.docker.com/r/geonode/geoserver_data/builds/bwkxcupsunvuitzusi9gsnt/
+.. _geonode/geoserver_data:2.10.x: https://hub.docker.com/r/geonode/geoserver_data/builds/b9vbumhwfcrti8bxnmpbpwi/
