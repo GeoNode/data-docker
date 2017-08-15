@@ -19,9 +19,11 @@ The most commonly used approches in `Docker`_ are `Data volumes`_ and `Data volu
 
 .. warning:: If you want to follow this readme and run the docker command you have to make sure that your docker host environment has been already set and your docker default machine has been started.
 
-.. note:: This is required by all developers who are using `Docker-Machine`_ for running containers. Those use native linux or vm like **Docker for Mac** and **Docker for Windows** don't need these checks.
+.. note:: This is required by all developers who are using `Docker-Machine`_ for running containers. Those use native linux or vm like `Docker for Mac`_ and `Docker for Windows`_ don't need these checks.
 
 .. _Docker-Machine: https://docs.docker.com/machine/
+.. _Docker for Mac: https://www.docker.com/docker-mac
+.. _Docker for Windows: https://www.docker.com/docker-windows
 
 Docker-Machine
 --------------
