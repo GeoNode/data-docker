@@ -78,7 +78,6 @@ In case of the GeoNode *data* for example you cannot start from scratch in devel
 
 Data volume containers
 ----------------------
-
 A data volume container is essentially a docker image that defines storage space. The container itself just defines a place inside docker's virtual file system where data is stored. The container doesn’t run a process and in fact *stops* immediately after `docker run` is called as the container exists in a stopped state, so along with its data.
 
 So let's create a dedicated container that holds all of GeoNode persistent shareable data resources, mounting the data inside of it and then eventually into other containers once created and setup:
