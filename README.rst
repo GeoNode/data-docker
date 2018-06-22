@@ -158,7 +158,7 @@ A docker-compose.yml can be defined in such a way with a service that mounts thi
 
 .. _tag of Docker Hub builds: https://hub.docker.com/r/geonode/geoserver_data/builds/
 
-.. _GeoServer-GeoNode 2.12.x: https://github.com/GeoNode/geoserver-geonode-ext/tree/2.13.x
+.. _GeoServer-GeoNode 2.13.x: https://github.com/GeoNode/geoserver-geonode-ext/tree/2.13.x
 
 .. code-block:: yaml
 
