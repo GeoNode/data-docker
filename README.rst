@@ -78,7 +78,6 @@ In case of the GeoNode *data* for example you cannot start from scratch in devel
 
 Data volume containers
 ----------------------
-
 A data volume container is essentially a docker image that defines storage space. The container itself just defines a place inside docker's virtual file system where data is stored. The container doesn’t run a process and in fact *stops* immediately after `docker run` is called as the container exists in a stopped state, so along with its data.
 
 So let's create a dedicated container that holds all of GeoNode persistent shareable data resources, mounting the data inside of it and then eventually into other containers once created and setup:
@@ -184,12 +183,6 @@ A docker-compose.yml can be defined in such a way with a service that mounts thi
         # reference to the named data container that holds the preloaded geoserver data directory
         geoserver_data_dir:
 
-If you want to use the stable GeoNode with GeoServer version *2.9.x* with the *oauth2* authentication mechanism then you should modify this line in your docker-compose.yaml file:
-
-.. code-block:: yaml
-
-    data_dir_conf:
-        image: geonode/geoserver_data:2.9.x-oauth2
 
 Available tags
 --------------
@@ -201,10 +194,11 @@ There are two different tags from the `Docker Hub builds`_:
 * **2.9.x**: `geonode/geoserver_data:2.9.x`_
 * **2.9.x-oauth2**: `geonode/geoserver_data:2.9.x-oauth2`_
 * **2.10.x**: `geonode/geoserver_data:2.10.x`_
+* **2.12.x**: `geonode/geoserver_data:2.12.x`_
 * **2.13.x**: `geonode/geoserver_data:2.13.x`_
 
 .. _geonode/geoserver_data:2.9.x: https://hub.docker.com/r/geonode/geoserver_data/builds/bsus6alnddg4bc7icwymevp/
 .. _geonode/geoserver_data:2.9.x-oauth2: https://hub.docker.com/r/geonode/geoserver_data/builds/bwkxcupsunvuitzusi9gsnt/
 .. _geonode/geoserver_data:2.10.x: https://hub.docker.com/r/geonode/geoserver_data/builds/b9vbumhwfcrti8bxnmpbpwi/
 .. _geonode/geoserver_data:2.12.x: https://hub.docker.com/r/geonode/geoserver_data/builds/byaaalw3lnasunpveyg3x4i/
-.. _geonode/geoserver_data:2.13.x: https://hub.docker.com/r/geonode/geoserver_data/builds/byaaalw3lnasunpveyg3x4i/
+.. _geonode/geoserver_data:2.13.x: https://hub.docker.com/r/geonode/geoserver_data/builds/brda7zdmshh2trbhfhtzcjk/
