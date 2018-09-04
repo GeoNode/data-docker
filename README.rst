@@ -203,4 +203,4 @@ There are two different tags from the `Docker Hub builds`_:
 .. _geonode/geoserver_data:2.10.x: https://hub.docker.com/r/geonode/geoserver_data/builds/b9vbumhwfcrti8bxnmpbpwi/
 .. _geonode/geoserver_data:2.12.x: https://hub.docker.com/r/geonode/geoserver_data/builds/byaaalw3lnasunpveyg3x4i/
 .. _geonode/geoserver_data:2.13.x: https://hub.docker.com/r/geonode/geoserver_data/builds/bunuqzq7a7dk65iumjhkbtc/
-.. _geonode/geoserver_data:2.14.x: https://hub.docker.com/r/geonode/geoserver_data/builds/bunuqzq7a7dk65iumjhkbtc/
+.. _geonode/geoserver_data:2.14.x: https://hub.docker.com/r/geonode/geoserver_data/builds/blpdjzkrv7pm3stunzpn4pp/
