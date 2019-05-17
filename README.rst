@@ -187,15 +187,16 @@ A docker-compose.yml can be defined in such a way with a service that mounts thi
 Available tags
 --------------
 
-There are two different tags from the `Docker Hub builds`_:
+There are several different tags from the `Docker Hub builds`_:
 
-.. _Docker Hub builds: https://hub.docker.com/r/geonode/geoserver_data/builds/
+.. _Docker Hub builds: https://cloud.docker.com/u/geonode/repository/registry-1.docker.io/geonode/geoserver_data/builds/
 
 * **2.9.x**: `geonode/geoserver_data:2.9.x`_
 * **2.9.x-oauth2**: `geonode/geoserver_data:2.9.x-oauth2`_
 * **2.10.x**: `geonode/geoserver_data:2.10.x`_
 * **2.12.x**: `geonode/geoserver_data:2.12.x`_
 * **2.13.x**: `geonode/geoserver_data:2.13.x`_
+* **2.14.x**: `geonode/geoserver_data:2.14.x`_
 * **2.15.x**: `geonode/geoserver_data:2.15.x`_
 
 .. _geonode/geoserver_data:2.9.x: https://hub.docker.com/r/geonode/geoserver_data/builds/bsus6alnddg4bc7icwymevp/
@@ -203,4 +204,5 @@ There are two different tags from the `Docker Hub builds`_:
 .. _geonode/geoserver_data:2.10.x: https://hub.docker.com/r/geonode/geoserver_data/builds/b9vbumhwfcrti8bxnmpbpwi/
 .. _geonode/geoserver_data:2.12.x: https://hub.docker.com/r/geonode/geoserver_data/builds/byaaalw3lnasunpveyg3x4i/
 .. _geonode/geoserver_data:2.13.x: https://hub.docker.com/r/geonode/geoserver_data/builds/bunuqzq7a7dk65iumjhkbtc/
-.. _geonode/geoserver_data:2.15.x: https://hub.docker.com/r/geonode/geoserver_data/builds/blpdjzkrv7pm3stunzpn4pp/
+.. _geonode/geoserver_data:2.14.x: https://cloud.docker.com/u/geonode/repository/registry-1.docker.io/geonode/geoserver_data/builds/545f08f9-75a3-4161-bcb0-895c1817dc8d
+.. _geonode/geoserver_data:2.15.x: https://cloud.docker.com/u/geonode/repository/registry-1.docker.io/geonode/geoserver_data/builds/dce29f95-b6f7-4f5e-86f1-78d5e98fd866
