@@ -118,9 +118,9 @@ Run a geoserver container with such created volume:
 	# need to having pulling geonode/geoserver:2.10.x from docker hub
     $ docker run -d --volumes-from geoserver_data_dir --name geoserver geonode/geoserver
 
-Verify that the preloaded `GeoServer Data Directory for GeoServer 2.15.3`_ build from Jenkins is actually there:
+Verify that the preloaded `GeoServer Data Directory for GeoServer 2.15.4`_ build from Jenkins is actually there:
 
-.. _GeoServer Data Directory for GeoServer 2.15.3: http://build.geonode.org/geoserver/latest/data-2.15.3.zip
+.. _GeoServer Data Directory for GeoServer 2.15.4: http://build.geonode.org/geoserver/latest/data-2.15.4.zip
 
 .. code-block:: console
 
@@ -154,11 +154,11 @@ The output should be something similar:
 How to define a docker-compose that uses data-docker
 ----------------------------------------------------
 
-A docker-compose.yml can be defined in such a way with a service that mounts this data directory from a `tag of Docker Hub builds`_, in this case the version for `GeoServer-GeoNode 2.15.3`_:
+A docker-compose.yml can be defined in such a way with a service that mounts this data directory from a `tag of Docker Hub builds`_, in this case the version for `GeoServer-GeoNode 2.15.4`_:
 
 .. _tag of Docker Hub builds: https://hub.docker.com/r/geonode/geoserver_data/builds/
 
-.. _GeoServer-GeoNode 2.15.3: https://github.com/GeoNode/geoserver-geonode-ext/tree/2.15.3
+.. _GeoServer-GeoNode 2.15.4: https://github.com/GeoNode/geoserver-geonode-ext/tree/2.15.4
 
 .. code-block:: yaml
 
@@ -173,7 +173,7 @@ A docker-compose.yml can be defined in such a way with a service that mounts thi
                 # reference to the service which has the volume with the preloaded geoserver_data_dir
                 - data_dir_conf
         data_dir_conf:
-            image: geonode/geoserver_data:2.15.3
+            image: geonode/geoserver_data:2.15.4
             container_name: geoserver_data_dir # named data container
             command: /bin/true
             volumes:
@@ -197,7 +197,7 @@ There are several different tags from the `Docker Hub builds`_:
 * **2.12.x**: `geonode/geoserver_data:2.12.x`_
 * **2.13.x**: `geonode/geoserver_data:2.13.x`_
 * **2.14.x**: `geonode/geoserver_data:2.14.x`_
-* **2.15.3**: `geonode/geoserver_data:2.15.3`_
+* **2.15.4**: `geonode/geoserver_data:2.15.4`_
 
 .. _geonode/geoserver_data:2.9.x: https://hub.docker.com/r/geonode/geoserver_data/builds/bsus6alnddg4bc7icwymevp/
 .. _geonode/geoserver_data:2.9.x-oauth2: https://hub.docker.com/r/geonode/geoserver_data/builds/bwkxcupsunvuitzusi9gsnt/
@@ -205,4 +205,4 @@ There are several different tags from the `Docker Hub builds`_:
 .. _geonode/geoserver_data:2.12.x: https://hub.docker.com/r/geonode/geoserver_data/builds/byaaalw3lnasunpveyg3x4i/
 .. _geonode/geoserver_data:2.13.x: https://hub.docker.com/r/geonode/geoserver_data/builds/bunuqzq7a7dk65iumjhkbtc/
 .. _geonode/geoserver_data:2.14.x: https://cloud.docker.com/u/geonode/repository/registry-1.docker.io/geonode/geoserver_data/builds/545f08f9-75a3-4161-bcb0-895c1817dc8d
-.. _geonode/geoserver_data:2.15.3: https://cloud.docker.com/u/geonode/repository/registry-1.docker.io/geonode/geoserver_data/builds/dce29f95-b6f7-4f5e-86f1-78d5e98fd866
+.. _geonode/geoserver_data:2.15.4: https://cloud.docker.com/u/geonode/repository/registry-1.docker.io/geonode/geoserver_data/builds/dce29f95-b6f7-4f5e-86f1-78d5e98fd866
