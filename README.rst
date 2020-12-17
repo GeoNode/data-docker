@@ -120,7 +120,7 @@ Run a geoserver container with such created volume:
 
 Verify that the preloaded `GeoServer Data Directory for GeoServer 2.17.4`_ build from Jenkins is actually there:
 
-.. _GeoServer Data Directory for GeoServer 2.17.4: http://build.geonode.org/geoserver/latest/data-2.17.4.zip
+.. _GeoServer Data Directory for GeoServer 2.17.4: https://www.dropbox.com/s/sebw3h90mtvnzwe/data-2.17.4.zip
 
 .. code-block:: console
 

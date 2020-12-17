@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER GeoNode development team
+LABEL GeoNode development team
 
 # Install curl in alpine 3.3+
 RUN apk --no-cache add curl
