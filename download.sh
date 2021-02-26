@@ -13,7 +13,7 @@ TEMP_DOWNLOADED=$2
 
 echo "GeoServer Data Directory is going to be downloaded"
 # for debugging
-echo "curl -k -L -O https://www.dropbox.com/s/sebw3h90mtvnzwe/data-${GEOSERVER_VERSION}.zip"
-curl -k -L -O https://www.dropbox.com/s/sebw3h90mtvnzwe/data-$GEOSERVER_VERSION.zip && \
+echo "curl -k -L -O https://www.dropbox.com/s/q0qc2t7d9alo9fk/data-${GEOSERVER_VERSION}.zip"
+curl -k -L -O https://www.dropbox.com/s/q0qc2t7d9alo9fk/data-$GEOSERVER_VERSION.zip && \
 unzip -x -d ${TEMP_DOWNLOADED} data-$GEOSERVER_VERSION.zip
 echo "GeoServer Data Directory download has been completed"
