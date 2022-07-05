@@ -12,7 +12,7 @@ GEOSERVER_VERSION=$1
 TEMP_DOWNLOADED=$2 
 
 echo "GeoServer Data Directory is going to be downloaded"
-artifact_url="https://www.dropbox.com/s/cd20is9ddjz7ti5/data-$GEOSERVER_VERSION.zip"
+artifact_url="https://artifacts.geonode.org/geoserver/$GEOSERVER_VERSION/geonode-geoserver-ext-web-app-data.zip"
 echo "Downloading: $artifact_url"
 curl  -k -L -O "$artifact_url" && unzip -x -d ${TEMP_DOWNLOADED} data-$GEOSERVER_VERSION.zip
 echo "GeoServer Data Directory download has been completed"
